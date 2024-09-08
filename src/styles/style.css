@@ -8,10 +8,138 @@
     --primary-accent: #5F4BF5;
 
     --text: #000;
-    --lighter-text: #79747E;
+    --lighter-text: #535353;
+
+    --nav-icons: #535353;
 
     --button-background: #F8F8F8;
-    --button-stroke: #D6D6D6;
+    --stroke: #D6D6D6;
 
     --grey: #D8D8D8;
 }
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+svg {
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+body {
+    height: 100vh;
+    background-color: var(--darker-background);
+    display: grid;
+    grid-template-areas: "navbar main";
+    grid-template-columns: 24rem 1fr;
+}
+
+nav {
+    background-color: inherit;
+    grid-area: navbar;
+    padding: 28px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+main {
+    background-color: var(--background);
+    grid-area: main;
+    margin: 12px 0;
+    border-radius: 16px 0 0 16px;
+}
+
+ul {
+    display: grid;
+    gap: 8px;
+}
+
+li > a {
+    display: flex;
+}
+
+.account-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.account-header > a {
+    display: flex;
+    gap: 1rem;
+}
+
+.account-header > a > img {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.account-header > a > #account-name {
+    font-weight: 700;
+    font-size: 1.25rem;
+    align-self: center;
+}
+
+.account-header > .account-switcher-container {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 4px;
+    border: 1px solid var(--stroke);
+    background-color: var(--background);
+    align-self: center;
+    display: grid;
+    place-content: center;
+    &:hover {
+        cursor: pointer;
+        background-color: var(--darker-background);
+    }
+}
+
+.account-header > .account-switcher-container > svg {
+    width: 1rem;
+    height: 1rem;
+}
+
+ul > li {
+    height: 3rem;
+    padding: 1rem;
+    border-radius: 8px;
+    &:hover {
+        background-color: var(--selected-background);
+    }
+}
+
+ul > li > a {
+    height: 100%;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    color: var(--lighter-text);
+}
+
+ul > li > a > svg {
+    fill: var(--nav-icons);
+}
+
+ul.nav-items-secondary {
+    display: flex;
+    flex-direction: column;
+    margin-top: 150%;
+}
+
+li.selected {
+    background-color: var(--selected-background);
+    color: var(--text);
+}
+
+li.selected > a {
+    color: var(--text);
+}
+
+li.selected svg {
+    fill: var(--text);
+} 
