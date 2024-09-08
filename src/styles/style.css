@@ -1,1 +1,17 @@
 @import url("./css-resets/reset.css");
+
+:root {
+    --background: #FFFFFF;
+    --darker-background: #F2F2F2;
+    --selected-background: #E0E0E0;
+
+    --primary-accent: #5F4BF5;
+
+    --text: #000;
+    --lighter-text: #79747E;
+
+    --button-background: #F8F8F8;
+    --button-stroke: #D6D6D6;
+
+    --grey: #D8D8D8;
+}
