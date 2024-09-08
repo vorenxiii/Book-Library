@@ -1,6 +1,6 @@
-# Book's Library
+# Book Library
 
-This is a part of the Odin Project Course, in this case, it is a book's library.
+This is a part of the Odin Project Course, in this case, it is a book library.
 
 ## Technologies used:
 * HTML
