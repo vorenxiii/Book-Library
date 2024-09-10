@@ -74,4 +74,10 @@ const STATES = Object.freeze({
   let book = new Book();
   let library = new Library();
   library.AddBookToLibrary(book);
-  
+
+  function GetClonedCardTemplate() {
+    const template = document.querySelector(".card-template");
+    return template.cloneNode(true); // true means a deep clone, including children
+  }
+
+  console.log(GetClonedCardTemplate());
