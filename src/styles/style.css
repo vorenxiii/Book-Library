@@ -311,7 +311,7 @@ dialog {
   position: absolute;
   top: 20%;
   border: 2px solid black;
-  width: 350px;
+  width: max(350px, auto);
 }
 
 .dialog-close-button {
