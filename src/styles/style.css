@@ -1,203 +1,302 @@
 @import url("./css-resets/reset.css");
 
 :root {
-    --background: #FFFFFF;
-    --darker-background: #F2F2F2;
-    --selected-background: #E0E0E0;
+  --background: #ffffff;
+  --darker-background: #f2f2f2;
+  --selected-background: #e0e0e0;
 
-    --primary-accent: #5F4BF5;
+  --primary-accent: #5f4bf5;
 
-    --text: #000;
-    --lighter-text: #535353;
+  --text: #000;
+  --lighter-text: #535353;
 
-    --nav-icons: #535353;
+  --nav-icons: #535353;
 
-    --button-background: #F8F8F8;
-    --stroke: #D6D6D6;
+  --button-background: #f8f8f8;
+  --stroke: #d6d6d6;
 
-    --grey: #D8D8D8;
+  --grey: #d8d8d8;
 }
 
 a {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
 svg {
-    height: 1.5rem;
-    width: 1.5rem;
+  height: 1.5rem;
+  width: 1.5rem;
 }
 
 body {
-    height: 100vh;
-    background-color: var(--darker-background);
-    display: grid;
-    grid-template-areas: "navbar main";
-    grid-template-columns: 24rem 1fr;
+  height: 100vh;
+  background-color: var(--darker-background);
+  display: grid;
+  grid-template-areas: "navbar main";
+  grid-template-columns: 24rem 1fr;
 }
 
 nav {
-    background-color: inherit;
-    grid-area: navbar;
-    padding: 28px 32px;
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
+  background-color: inherit;
+  grid-area: navbar;
+  padding: 28px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  /* left: 0; */
+  overflow: auto;
 }
 
 main {
-    background-color: var(--background);
-    grid-area: main;
-    margin: 12px 0;
-    border-radius: 16px 0 0 16px;
-    padding: 0 2rem;
+  background-color: var(--background);
+  grid-area: main;
+  margin: 12px 0;
+  border-radius: 16px 0 0 16px;
+  padding: 0 2rem 2rem 2rem;
+  overflow: auto;
 }
 
 ul {
-    display: grid;
-    gap: 8px;
+  display: grid;
+  gap: 8px;
 }
 
 li > a {
-    display: flex;
+  display: flex;
 }
 
 .account-header {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .account-header > a {
-    display: flex;
-    gap: 1rem;
+  display: flex;
+  gap: 1rem;
 }
 
 .account-header > a > img {
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 50%;
-    object-fit: cover;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .account-header > a > #account-name {
-    font-weight: 700;
-    font-size: 1.25rem;
-    align-self: center;
+  font-weight: 700;
+  font-size: 1.25rem;
+  align-self: center;
 }
 
 .account-header > .account-switcher-container {
-    width: 1.5rem;
-    height: 1.5rem;
-    border-radius: 4px;
-    border: 1px solid var(--stroke);
-    background-color: var(--background);
-    align-self: center;
-    display: grid;
-    place-content: center;
-    &:hover {
-        cursor: pointer;
-        background-color: var(--darker-background);
-    }
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 4px;
+  border: 1px solid var(--stroke);
+  background-color: var(--background);
+  align-self: center;
+  display: grid;
+  place-content: center;
+  &:hover {
+    cursor: pointer;
+    background-color: var(--darker-background);
+  }
 }
 
 .account-header > .account-switcher-container > svg {
-    width: 1rem;
-    height: 1rem;
+  width: 1rem;
+  height: 1rem;
 }
 
 ul > li {
-    height: 3rem;
-    padding: 1rem;
-    border-radius: 8px;
-    &:hover {
-        background-color: var(--selected-background);
-    }
+  height: 3rem;
+  padding: 1rem;
+  border-radius: 8px;
+  &:hover {
+    background-color: var(--selected-background);
+  }
 }
 
 ul > li > a {
-    height: 100%;
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-    color: var(--lighter-text);
+  height: 100%;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  color: var(--lighter-text);
 }
 
 ul > li > a > svg {
-    fill: var(--nav-icons);
+  fill: var(--nav-icons);
 }
 
 ul.nav-items-secondary {
-    display: flex;
-    flex-direction: column;
-    margin-top: 150%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 150%;
 }
 
 li.selected {
-    background-color: var(--selected-background);
-    color: var(--text);
+  background-color: var(--selected-background);
+  color: var(--text);
 }
 
 li.selected > a {
-    color: var(--text);
+  color: var(--text);
 }
 
 li.selected svg {
-    fill: var(--text);
+  fill: var(--text);
+}
+
+.main-header-container {
+  position: sticky;
+  top: 0;
+  background-color: var(--background);
+  padding-bottom: 1px;
 }
 
 .main-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 5rem;
 }
 
 .main-header > h2.main-header-title {
-    font-size: 2.488rem;
-    font-weight: 700;
+  font-size: 2.488rem;
+  font-weight: 700;
 }
 
 .main-header > .main-header-buttons {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
 }
 
 .main-header-buttons > button#add-book-button {
-    width: 5rem;
-    height: 2.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 0.5rem;
-    border-radius: 4px;
-    border: none;
-    border: 1px solid var(--stroke);
-    background-color: var(--button-background);
+  width: 5rem;
+  height: 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.5rem;
+  border-radius: 4px;
+  border: none;
+  border: 1px solid var(--stroke);
+  background-color: var(--button-background);
 }
 
 button#add-book-button > span#plus-char {
-    font-size: 1.728rem;
+  font-size: 1.728rem;
 }
 
 button#add-book-button {
-    font-size: 1.2rem;
-    &:hover {
-        background-color: var(--selected-background);
-        cursor: pointer;
-    }
+  font-size: 1.2rem;
+  &:hover {
+    background-color: var(--selected-background);
+    cursor: pointer;
+  }
 }
 
 .main-header-buttons > svg#dots {
-    height: 2rem;
-    width: 2rem;
-    opacity: 80%;
-    &:hover {
-        fill: var(--primary-accent);
-        cursor: pointer;
-    }
+  height: 2rem;
+  width: 2rem;
+  opacity: 80%;
+  &:hover {
+    fill: var(--primary-accent);
+    cursor: pointer;
+  }
 }
 
 main > hr {
-    margin: 0 -2rem 0 -0.5rem;
+  margin: 0 -2rem 0 -0.5rem;
+  height: 3px;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--grey);
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+  padding-top: 28px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 280px;
+  border: 1px solid var(--grey);
+  border-radius: 13px;
+  background-color: var(--grey);
+}
+
+.card > .sec-info-container {
+  flex: 1 1 66%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 8px 16px;
+}
+
+.sec-info-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.archive-button {
+  width: 20px;
+  height: 20px;
+  font-size: 0.8rem;
+  display: grid;
+  place-content: center;
+  background-color: var(--grey);
+  border: none;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.archive-button > svg {
+  fill: darkred;
+  &:hover {
+    fill: red;
+  }
+}
+
+.isRead-checkbox {
+  background-color: #fff;
+  width: 20px;
+  height: 20px;
+  accent-color: var(--primary-accent);
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.nb-of-pages {
+  align-self: flex-end;
+}
+
+.card > .prim-info-container {
+  flex: 1 1 33%;
+  background-color: var(--background);
+  padding: 4px 16px;
+  border-radius: 0 0 12px 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 4px 6px var(--grey);
+}
+
+h6.book-title {
+  font-size: 1.2rem;
+}
+
+.card h6 {
+  margin: 0;
 }
