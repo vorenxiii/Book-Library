@@ -309,7 +309,6 @@ dialog {
   border-color: var(--text);
   border-radius: 4px;
   position: absolute;
-  top: 20%;
   border: 2px solid black;
   width: max(350px, auto);
 }
@@ -454,4 +453,9 @@ form input[type="checkbox"] {
   &:hover {
     background-color: var(--secondary-accent);
   }
+}
+
+::backdrop {
+  backdrop-filter: blur(10px); /* Blurs the background */
+  background-color: rgba(0, 0, 0, 0.3); /* Adds a semi-transparent background */
 }

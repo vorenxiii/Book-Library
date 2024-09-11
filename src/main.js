@@ -21,6 +21,11 @@ const STATES = Object.freeze({
       description: "This book is archived.",
     },
   });
+
+  // node elements
+  const add_book_button = document.querySelector("#add-book-button");
+  const dialog = document.querySelector("dialog");
+  const close_dialog_nodes = document.querySelectorAll(".dialog-close-button, #dialog-form-cancel-button");
   
   class Book {
     constructor(
@@ -81,3 +86,13 @@ const STATES = Object.freeze({
   }
 
   console.log(GetClonedCardTemplate());
+
+  add_book_button.addEventListener("click", () => {
+    dialog.showModal();
+  });
+
+  close_dialog_nodes.forEach(node => {
+    node.addEventListener("click", () => {
+      dialog.close();
+    });
+  });

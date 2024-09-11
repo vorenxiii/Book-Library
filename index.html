@@ -462,7 +462,7 @@
       </div>
     </main>
 
-    <dialog open>
+    <dialog>
       <div class="dialog-header">
         <h5>Add new book</h5>
         <button class="dialog-close-button">
@@ -487,11 +487,11 @@
           <li>another error</li>
         </ul>
       </div>
-      <form class="add-book-form" action="">
+      <form class="add-book-form" method="dialog" action="">
         <ul role="list">
           <li>
             <label for="bookName">Book name</label>
-            <input type="text" name="bookName" id="bookName" required/>
+            <input type="text" name="bookName" id="bookName" required autofocus/>
           </li>
           <li>
             <label for="bookAuthor">Book author</label>
